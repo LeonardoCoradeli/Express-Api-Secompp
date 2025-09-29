@@ -2,7 +2,7 @@
 
 Bem-vindos ao minicurso de desenvolvimento de APIs com Express.js e TypeScript\!
 
-Este projeto foi desenvolvido por Leonardo Cendes, Lucas Hungaro e seus colegas para a Semana da Computação de Presidente Prudente (SECOMPP). Trata-se de uma API RESTful completa para gerenciamento de tarefas, construída com as tecnologias mais modernas do ecossistema Node.js.
+Este projeto foi desenvolvido por Leonardo Coradeli, Leonardo Cendes, Lucas Hungaro para a SECOMPP, trata-se de uma API RESTful completa para gerenciamento de tarefas.
 
 O objetivo é demonstrar de forma prática como estruturar uma aplicação robusta, escalável e de fácil manutenção, seguindo as melhores práticas de desenvolvimento de software.
 
