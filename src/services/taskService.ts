@@ -51,7 +51,6 @@ class TaskService {
       throw new AppError('Task not found', 404);
     }
     
-    // Se o status for 'completed', atualizar o campo completed
     if (taskData.status === TaskStatus.COMPLETED) {
       taskData.completed = true;
     }

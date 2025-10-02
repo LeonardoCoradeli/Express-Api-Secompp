@@ -1,35 +1,14 @@
-# Versão do docker-compose
 version: '3.8'
 
-# Definição dos serviços (containers)
 services:
-  # Nome do serviço do MongoDB
   mongo:
-    # Imagem oficial do MongoDB que será usada
     image: mongo:latest
-    
-    # Nome do container para fácil identificação
     container_name: mongodb_task_api
-    
-    # Reinicia o container automaticamente em caso de falha
     restart: always
-    
-    # Mapeamento de portas: <porta_local>:<porta_do_container>
-    # Expõe a porta padrão do Mongo (27017) para a sua máquina local
     ports:
       - "27017:27017"
       
-    # Mapeamento de volumes: <pasta_local>:<pasta_do_container>
-    # Garante que os dados do banco de dados persistam na pasta 'mongo-data'
     volumes:
       - ./mongo-data:/data/db
-      
-    # Variáveis de ambiente (opcional, mas bom para autenticação)
-    # Descomente as linhas abaixo se quiser adicionar um usuário e senha
-    # environment:
-    #   MONGO_INITDB_ROOT_USERNAME: seu_usuario
-    #   MONGO_INITDB_ROOT_PASSWORD: sua_senha
-
-# Definição dos volumes (para o docker gerenciar)
 volumes:
   mongo-data:
