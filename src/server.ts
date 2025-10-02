@@ -2,9 +2,12 @@ import express, { Application } from 'express';
 import cors from 'cors'
 import connectDB from './config/database';
 import taskRoutes from './routes/taskRoutes';
+import authRoutes from './routes/authRoutes';
 import swaggerUi from 'swagger-ui-express';
 import swaggerSpec from './config/swagger';
 import errorHandler from './middlewares/errorHandler';
+import dotenv from 'dotenv';
+dotenv.config()
 
 const app: Application = express();
 const PORT = process.env.PORT || 3000;
@@ -21,6 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Rotas
+app.use('/api/auth', authRoutes);
 app.use('/api/tasks', taskRoutes);
 
 // Health check

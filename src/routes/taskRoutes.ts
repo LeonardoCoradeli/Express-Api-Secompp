@@ -1,8 +1,11 @@
 import { Router } from 'express';
 import taskController from '../controllers/taskController';
 import validateObjectId from '../middlewares/validateObjectId';
+import protect from '../middlewares/authMiddleware';
 
 const router = Router();
+
+router.use(protect);
 
 /**
  * @openapi

@@ -17,8 +17,15 @@ const options: swaggerJsdoc.Options = {
       },
     ],
     components: {
-        schemas: {
-            Task: {
+      securitySchemes: {
+        bearerAuth: {
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT',
+        },
+      },
+      schemas: {
+        Task: {
           type: 'object',
           properties: {
             _id: {
@@ -55,10 +62,14 @@ const options: swaggerJsdoc.Options = {
             }
           }
         }
-        }
-    }
+      }
+    },
+    security: [
+      {
+        bearerAuth: [],
+      },
+    ]
   },
-  // Caminho para os arquivos que contêm as anotações da API (rotas e models)
   apis: ['./src/routes/*.ts', './src/models/*.ts'],
 };
 
